@@ -1,0 +1,35 @@
+\documentclass[a4paper]{article}
+
+%#########################################%
+% Packages
+    \usepackage{preamble}
+
+%#########################################%
+% Bibliography
+    \usepackage[
+        style=chem-acs,
+        sorting=none % sort by cite order
+    ]{biblatex}
+
+    % EXCEPTION: must be loaded after biblatex
+    \usepackage[unicode]{hyperref}
+
+    % Add bibliography
+    \addbibresource{./bibliography.bib}
+
+%#########################################%
+% Title
+    \title{Title}
+    \author{Leonardo Salicari}
+    \date{}
+
+%#########################################%
+\begin{document}
+
+\maketitle
+
+Test \cite{adams2004}
+
+\printbibliography
+
+\end{document}

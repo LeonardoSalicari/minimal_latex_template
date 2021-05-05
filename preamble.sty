@@ -1,0 +1,78 @@
+\ProvidesPackage{preamble}
+
+%#########################################%
+% EASTETICS
+    % Page geometry: affect typesetting without using commands
+    \usepackage[top=3.5cm,bottom=3.5cm,left=3cm,right=3cm]{geometry}
+
+    % Page layout personalization
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    % \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername}\ \thechapter.\ #1}{}}
+    % \lhead{}
+    % \rhead{\leftmark}
+
+    % Change chapter eastetics, has to be in the beginning of the document
+    % \usepackage[Sonny]{fncychap}
+
+    % When separating two paragraph by an empy line you have more space between 
+    % those paragraph: affect typesetting without using commands
+    \usepackage{parskip}
+
+    % Indent the first paragraph
+    % \usepackage{indentfirst}    
+
+% FLOATS
+    % Include graphics, w/ specified engine
+    \usepackage[pdftex]{graphicx} 
+
+    % Option about caption estectics (not position)
+    \usepackage[font=small]{caption}
+
+    % Work with subfigures
+    %\usepackage{subfigure}
+
+    % Gourgeous tables: add \toprule \midrule and \bottomrule
+    \usepackage{booktabs}
+
+    % for creating table with cell spanning multiple rows
+    %\usepackage{multirow}
+
+% UTILS
+    % place at the end of a macro to be used in the text, add a final space
+    % E.g. \AA\xspace
+    \usepackage{xspace}
+
+    % to color part of the text that I have to modfy
+    \usepackage[dvipsnames]{xcolor}
+
+    % Defines \begin{lstlisting} for code snippets
+    \usepackage{listings}
+
+    % takes care of email, urls etc. type
+    \usepackage{url}
+
+% SYMBOLS
+    % Math symbols
+    \usepackage{amssymb,amsmath,amsthm,amsfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% New commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO box to highlight where to adjust text
+\newcommand{\todo}[1]{\colorbox{BurntOrange}{#1}}
+% new vec command
+\renewcommand\vec{\mathbf}
+% Dedication
+\newenvironment{dedication}
+    {
+        %\clearpage          % we want a new page 
+        \thispagestyle{empty}% no header and footer
+        \vspace*{\stretch{1}}% some space at the top
+        \itshape             % the text is in italics
+        \raggedleft          % flush to the right margin
+    }
+    {
+        \par % end the paragraph
+        \vspace{\stretch{3}} % space at bottom is three times that at the top
+\clearpage           % finish off the page
+}  

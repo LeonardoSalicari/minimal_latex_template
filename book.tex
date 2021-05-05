@@ -1,0 +1,48 @@
+\documentclass[a4paper,11pt,fleqn]{book}
+
+%#########################################%
+% Packages
+    \usepackage{preamble}
+
+%#########################################%
+% Bibliography
+    \usepackage[
+        style=numeric-comp,
+        %citestyle=numeric-comp,
+        sorting=none % sort by cite order
+    ]{biblatex}
+
+    % EXCEPTION: must be loaded after biblatex
+    \usepackage[unicode]{hyperref}
+
+    % Add bibliography
+    \addbibresource{./bibliography.bib}
+
+%#########################################%
+% Title
+    \title{Title}
+    \author{Leonardo Salicari}
+    \date{}
+
+%#########################################%
+\begin{document}
+
+    \maketitle
+
+    \begin{dedication}
+        Dedica
+    \end{dedication}
+    \thispagestyle{empty} % avoid numbering after dedication
+
+    \frontmatter
+    \tableofcontents
+    \listoffigures
+    \mainmatter % ends the roman enumeration of pages 
+    % (started by \frontmatter in frontespizio)
+
+    \chapter{Test}
+    Test \cite{adams2004}
+
+    \printbibliography
+
+\end{document}
