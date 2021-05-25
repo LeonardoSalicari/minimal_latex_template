@@ -1,0 +1,45 @@
+\documentclass[a4paper]{article}
+
+%#########################################%
+% Packages
+    \usepackage{preamble}
+    \geometry{top=2cm,bottom=3cm,left=3cm,right=3cm}
+    % Here we overwrite the geometry package's options to have less space on top
+%#########################################%
+% Redefine Title and author to be on the left
+    \makeatletter
+    \renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+    \begin{flushleft}
+    \textbf{{\Large\@title}}
+
+    \@author
+    \end{flushleft}\egroup
+    }
+    \makeatother
+%#########################################%
+% Title
+    \title{Letter}
+    \author{Author}
+    \date{}
+%#########################################%
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % no numeration for letters (especially for single-page ones)
+
+\vspace{1cm}
+
+To the kind attention of some good reader,
+
+\vspace{0.5cm}
+
+Main text
+
+Sincerely yours,
+
+\vspace{0.3cm}
+
+\null\hfill Author
+
+\end{document}
