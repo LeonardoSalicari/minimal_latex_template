@@ -7,13 +7,6 @@
 
     % Page layout personalization
     \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    % \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername}\ \thechapter.\ #1}{}}
-    % \lhead{}
-    % \rhead{\leftmark}
-
-    % Change chapter eastetics, has to be in the beginning of the document
-    % \usepackage[Sonny]{fncychap}
 
     % When separating two paragraph by an empy line you have more space between 
     % those paragraph: affect typesetting without using commands
@@ -55,6 +48,11 @@
 % SYMBOLS
     % Math symbols
     \usepackage{amssymb,amsmath,amsthm,amsfonts}
+
+    % Able to take care of scientific notation with
+    % \num{.3e45} and SI units
+    % e.g. \unit{kg.m.s^{-1}} -> Kg m s^-1
+    \usepackage{siunitx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% New commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
