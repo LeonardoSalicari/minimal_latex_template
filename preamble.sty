@@ -4,30 +4,23 @@
 % EASTETICS
     % Page geometry: affect typesetting without using commands
     \usepackage[top=3.5cm,bottom=3.5cm,left=3cm,right=3cm]{geometry}
-
     % Page layout personalization
     \usepackage{fancyhdr}
-
     % When separating two paragraph by an empy line you have more space between 
     % those paragraph: affect typesetting without using commands
     \usepackage{parskip}
-
     % Indent the first paragraph
     % \usepackage{indentfirst}    
 
 % FLOATS
     % Include graphics, w/ specified engine
     \usepackage[pdftex]{graphicx} 
-
     % Option about caption estectics (not position)
     \usepackage[font=small]{caption}
-
     % Work with subfigures
     %\usepackage{subfigure}
-
     % Gourgeous tables: add \toprule \midrule and \bottomrule
     \usepackage{booktabs}
-
     % for creating table with cell spanning multiple rows
     %\usepackage{multirow}
 
@@ -35,31 +28,29 @@
     % place at the end of a macro to be used in the text, add a final space
     % E.g. \AA\xspace
     \usepackage{xspace}
-
     % to color part of the text that I have to modfy
     \usepackage[dvipsnames]{xcolor}
-
     % Defines \begin{lstlisting} for code snippets
     \usepackage{listings}
-
     % takes care of email, urls etc. type
     \usepackage{url}
 
 % SYMBOLS
+    % General physics symbols
+    \usepackage{physics}
     % Math symbols
     \usepackage{amssymb,amsmath,amsthm,amsfonts}
-
     % Able to take care of scientific notation with
     % \num{.3e45} and SI units
     % e.g. \unit{kg.m.s^{-1}} -> Kg m s^-1
-    \usepackage{siunitx}
+    % NOTE: this package is not fully compatible with physics
+    % \usepackage{siunitx}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% New commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO box to highlight where to adjust text
+% Box to highlight where to adjust text
 \newcommand{\todo}[1]{\colorbox{BurntOrange}{#1}}
-% new vec command
-\renewcommand\vec{\mathbf}
 % Dedication
 \newenvironment{dedication}
     {
