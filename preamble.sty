@@ -27,7 +27,7 @@
 % UTILS
     % place at the end of a macro to be used in the text, add a final space
     % E.g. \AA\xspace
-    \usepackage{xspace}
+    % \usepackage{xspace}
     % to color part of the text that I have to modfy
     \usepackage[dvipsnames]{xcolor}
     % Defines \begin{lstlisting} for code snippets
@@ -37,6 +37,7 @@
 
 % SYMBOLS
     % General physics symbols
+    % https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/physics/physics.pdf
     \usepackage{physics}
     % Math symbols
     \usepackage{amssymb,amsmath,amsthm,amsfonts}
@@ -49,8 +50,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% New commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Box to highlight where to adjust text
-\newcommand{\todo}[1]{\colorbox{BurntOrange}{#1}}
+% Box to highlight some comments for WIP or TODO or other
+% This creates a newline before and after that
+\newcommand{\todo}[1]{
+  \par % Add a newline before
+  \colorbox{BurntOrange}{#1}
+  \par % Add a newline after
+}
+% Highlight text for WIP or TODO
+% This is a flexible command to be used everywhere
+\newcommand{\hl}[1]{{\color{BrickRed}{#1}}}
+
 % Dedication
 \newenvironment{dedication}
     {
@@ -64,4 +74,17 @@
         \par % end the paragraph
         \vspace{\stretch{3}} % space at bottom is three times that at the top
 \clearpage           % finish off the page
-}  
+}
+
+% Figures. Example usage:
+% \qfig{\columnwidth}{my_image}{This is the caption}{fig:my_fig}
+% qfig -> quick figure
+\DeclareRobustCommand{\qfig}[4]{
+\begin{figure*}[h]
+\begin{centering}
+\includegraphics[width=#1\textwidth]{#2}
+\par\end{centering}
+\caption{#3}
+\label{#4}
+\end{figure*}
+}
